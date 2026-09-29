@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VoltPulse - IoT Energy Management Platform
+
+A high-performance B2B website built for **VoltPulse**, an energy management company providing IoT-based energy monitoring systems, microgrid analytics, and automated load control to industrial and commercial facilities.
+
+---
 
 ## Getting Started
 
@@ -16,21 +20,98 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure & File Guide
 
-## Learn More
+Below is a detailed breakdown of the files in the `app/` and `components/` directories, describing their specific purpose and architectural role.
 
-To learn more about Next.js, take a look at the following resources:
+### 📁 `app/` Directory
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The Next.js App Router root directory managing routing, layouts, templates, and global styling.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **[`app/layout.tsx`]**
+  * **Role**: Configures global typography (`Geist` and `Geist_Mono` via `next/font/google`), sets metadata (SEO title, description), applies `globals.css`, and renders the persistent `<Header />` across all routes.
 
-## Deploy on Vercel
+* **[`app/template.tsx`]**
+  * **Role**: Re-mounts on every route change to wrap the active page with `<PageTransition />`, enabling smooth Framer Motion animations across navigations.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **[`app/globals.css`]**
+  * **Role**: Declares base CSS custom properties (`--primary`, `--background`, `--foreground`, `--muted`), theme color tokens, dark mode overrides, and base typography rules.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **[`app/favicon.ico`]**
+  * **Role**: Default browser tab icon asset.
+
+* **[`app/page.tsx`]**
+  * **Role**: Orchestrates the modular home page layout with a dark industrial background and ambient radial glow, composing sections from `components/home/` and rendering the `<Footer />`.
+
+* **[`app/about/page.tsx`]**
+  * **Role**: Public-facing view detailing company vision, background, team, and commercial offerings.
+
+* **[`app/products/page.tsx`]**
+  * **Role**: Showcase page for IoT hardware products (DIN-Rail smart meters, industrial LoRaWAN gateways) and SaaS energy analytics services.
+
+* **[`app/contact/page.tsx`]**
+  * **Role**: Facilitates customer inquiries, assessment requests, and sales consultations for industrial clients.
+
+---
+
+### 📁 `components/` Directory
+
+Contains all reusable UI blocks, layout components, animation wrappers, and page sections.
+
+#### Root Components
+
+* **[`components/Header.tsx`]**
+  * **Role**: Fixed/sticky navigation bar with backdrop blur (`backdrop-blur-md`), brand branding, main navigation links (`Home`, `Products`, `About`), and a quick-action `<PrimaryLink>` button to the contact page.
+
+* **[`components/Footer.tsx`]**
+  * **Role**: Multi-column footer displaying company mission, copyright information, categorized links (`Solutions`, `Company`, `Resources`), and legal navigation (`Privacy Policy`, `Terms of Service`).
+
+---
+
+#### 📁 `components/home/` (Home Page Sections)
+
+Modular, single-responsibility components composed within `app/page.tsx`.
+
+* **[`components/home/HeroSection.tsx`]**
+  * **Role**: Displays the primary value proposition headline, descriptive copy, dual CTA links (`Deploy VoltPulse` and `Review Live Specs`), and a simulated real-time telemetry card with status indicators and graphic placeholder frame.
+
+* **[`components/home/ValuePropositionSection.tsx`]**
+  * **Role**: A 4-column responsive grid mapping through `VALUE_PROPOSITIONS` (Max Efficiency, Pure Sustainability, Total Resilience, Complete Control) with technical SVG icons and hover lift effects.
+
+* **[`components/home/CapabilitiesSection.tsx`]**
+  * **Role**: Asymmetrical grid layout highlighting core operational capabilities along with telemetry visualizer placeholders.
+
+* **[`components/home/MetricsSection.tsx`]**
+  * **Role**: Horizontal statistics bar highlighting industrial performance figures.
+
+* **[`components/home/PartnersSection.tsx`]**
+  * **Role**: Responsive flex row displaying trust partner brands.
+
+* **[`components/home/CtaSection.tsx`]**
+  * **Role**: Rounded container featuring an internal emerald ambient glow, persuasive microgrid assessment copy, and primary conversion links (`Connect with VoltPulse` and `Documentation`).
+
+---
+
+#### 📁 `components/ui/` (Design System & Primitives)
+
+* **[`components/ui/PrimaryLink.tsx`]**
+  * **Role**: Extends Next.js `LinkProps` with customizable sizing (`sm`, `md`, `lg`) and styles conforming to the emerald accent palette (`bg-primary`, dark text, soft glowing elevation, and hover transitions).
+
+---
+
+#### 📁 `components/animations/` (Motion & Interactions)
+
+* **[`components/animations/PageTransition.tsx`]**
+  * **Role**: Uses `framer-motion` (`"use client"`) to animate route entrances with smooth fade-in and vertical translation (`opacity: 0, y: 12` to `opacity: 1, y: 0`).
+
+---
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router, Turbopack)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Typography**: [Geist](https://vercel.com/font)

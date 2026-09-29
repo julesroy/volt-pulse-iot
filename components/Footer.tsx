@@ -1,0 +1,131 @@
+import Link from "next/link";
+
+export default function Footer() {
+  return (
+    <footer className="w-full border-t border-zinc-800/80 bg-zinc-950 text-zinc-400 text-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-zinc-800/60">
+          {/* Brand Column */}
+          <div className="lg:col-span-2 space-y-4">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+                <div className="w-2.5 h-2.5 rounded-sm bg-primary" />
+              </div>
+              <span className="text-lg font-bold tracking-tight text-white">
+                VoltPulse
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-zinc-400 max-w-sm leading-relaxed">
+              Software-defined infrastructure built for localized energy
+              independence, microgrid staging, and automated commercial load
+              shedding.
+            </p>
+            <p className="text-xs text-zinc-500 pt-2">
+              &copy; {new Date().getFullYear()} VoltPulse Systems, Inc. All rights reserved.
+            </p>
+          </div>
+
+          {/* Links Column 1 */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-semibold text-white tracking-wider uppercase font-mono">
+              Solutions
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Commercial Microgrids
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Solar Generation Sync
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Staged Storage Systems
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Dynamic EV Hubs
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Links Column 2 */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-semibold text-white tracking-wider uppercase font-mono">
+              Company
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Infrastructure Partners
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Press Kit
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Contact Sales
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Links Column 3 */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-semibold text-white tracking-wider uppercase font-mono">
+              Resources
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Developer API
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Telemetry Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Security Audits
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Tariff Index
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+          <p>Powering resilient, low-carbon industrial energy systems worldwide.</p>
+          <div className="flex items-center gap-6">
+            <Link href="/" className="hover:text-zinc-300 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/" className="hover:text-zinc-300 transition-colors">
+              Terms of Service
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
