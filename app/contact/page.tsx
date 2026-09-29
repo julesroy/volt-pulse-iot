@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Contact Sales & Engineering | VoltPulse",
     description:
       "Connect with our IoT energy systems engineers. Schedule an on-site facility power audit, request hardware telemetry specifications, or discuss enterprise microgrid pilots.",
-    url: "https://voltpulse.io/contact",
+    url: "",
     siteName: "VoltPulse",
     type: "website",
   },

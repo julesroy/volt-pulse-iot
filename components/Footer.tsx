@@ -12,8 +12,8 @@ export default function Footer() {
               <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
                 <div className="w-2.5 h-2.5 rounded-sm bg-primary" />
               </div>
-              <span className="text-lg font-bold tracking-tight text-white">
-                VoltPulse
+              <span className="text-lg font-bold italic tracking-tight">
+                <span className="text-white">Volt</span><span className="text-primary">Pulse</span>
               </span>
             </div>
             <p className="text-xs sm:text-sm text-zinc-400 max-w-sm leading-relaxed">
@@ -34,22 +34,22 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link href="/" className="hover:text-primary transition-colors">
-                  Commercial Microgrids
+                  Product 1
                 </Link>
               </li>
               <li>
                 <Link href="/" className="hover:text-primary transition-colors">
-                  Solar Generation Sync
+                  Product 2
                 </Link>
               </li>
               <li>
                 <Link href="/" className="hover:text-primary transition-colors">
-                  Staged Storage Systems
+                  Product 3
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-primary transition-colors">
-                  Dynamic EV Hubs
+                <Link href="/products" className="hover:text-primary transition-colors">
+                  All products
                 </Link>
               </li>
             </ul>

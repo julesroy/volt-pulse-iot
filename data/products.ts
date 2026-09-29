@@ -1,0 +1,118 @@
+import { Product } from "@/types/product";
+
+export const PRODUCTS: Product[] = [
+  {
+    id: "product-1",
+    name: "Product 1",
+    category: "hardware",
+    tagline: "Overview of product 1",
+    description: "Description of the product",
+    details: [
+      "Standard physical unit",
+      "Mountable enclosure",
+      "External power connection",
+      "Status indicator lights",
+    ],
+    features: [
+      "Reliable daily operation",
+      "Simple integration",
+      "Durable casing",
+      "Low maintenance",
+    ],
+  },
+  {
+    id: "product-2",
+    name: "Product 2",
+    category: "hardware",
+    tagline: "Overview of product 2",
+    description: "Description of the product",
+    details: [
+      "Compact form factor",
+      "Wall or rack mounting",
+      "Standard connector ports",
+      "Front panel indicators",
+    ],
+    features: [
+      "Continuous runtime",
+      "Quick installation",
+      "Energy efficient",
+      "Built-in protection",
+    ],
+  },
+  {
+    id: "product-3",
+    name: "Product 3",
+    category: "software",
+    tagline: "Overview of product 3",
+    description: "Description of the product",
+    details: [
+      "Web-accessible dashboard",
+      "Automated summary alerts",
+      "User permission management",
+      "Periodic data export",
+    ],
+    features: [
+      "Intuitive navigation",
+      "Real-time visual display",
+      "Customizable views",
+      "Cross-platform access",
+    ],
+  },
+  {
+    id: "product-4",
+    name: "Product 4",
+    category: "software",
+    tagline: "Overview of product 4",
+    description: "Description of the product",
+    details: [
+      "Automated notification engine",
+      "Historical logs browser",
+      "User role administration",
+      "Scheduled reporting",
+    ],
+    features: [
+      "Clean visual layout",
+      "Continuous data tracking",
+      "Configurable thresholds",
+      "Secure credential access",
+    ],
+  },
+  {
+    id: "product-5",
+    name: "Product 5",
+    category: "accessories",
+    tagline: "Overview of product 5",
+    description: "Description of the product",
+    details: [
+      "Standard cable length",
+      "Reinforced shielding",
+      "Quick snap connectors",
+      "Universal mounting kit",
+    ],
+    features: [
+      "Flexible placement",
+      "Simple replacement",
+      "Durable materials",
+      "Universal fit",
+    ],
+  },
+  {
+    id: "product-6",
+    name: "Product 6",
+    category: "accessories",
+    tagline: "Overview of product 6",
+    description: "Description of the product",
+    details: [
+      "Auxiliary power adapter",
+      "Overload surge protection",
+      "Status indicator LED",
+      "Standard wall plug",
+    ],
+    features: [
+      "Stable power delivery",
+      "Compact footprint",
+      "Lightweight casing",
+      "Plug-and-play setup",
+    ],
+  },
+];

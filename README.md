@@ -49,7 +49,7 @@ The Next.js App Router root directory managing routing, layouts, templates, and 
   * **Role**: Public-facing view detailing company vision, background, team, and commercial offerings.
 
 * **[`app/products/page.tsx`]**
-  * **Role**: Showcase page for IoT hardware products (DIN-Rail smart meters, industrial LoRaWAN gateways) and SaaS energy analytics services.
+  * **Role**: Showcase page for hardware products, software solutions, and accessories. Server Component exporting strict `Metadata` and OpenGraph tags, presenting a modular layout composing `<ProductsHero />` and `<ProductsCatalog />`.
 
 * **[`app/contact/page.tsx`]**
   * **Role**: Server Component for the Contact route (`/contact`). Exports strict `Metadata` and OpenGraph tags, presenting a responsive two-column layout composing `<ContactInfo />` and `<ContactForm />`.
@@ -63,7 +63,7 @@ Contains all reusable UI blocks, layout components, animation wrappers, and page
 #### Root Components
 
 * **[`components/Header.tsx`]**
-  * **Role**: Fixed/sticky navigation bar with backdrop blur (`backdrop-blur-md`), brand branding, main navigation links (`Home`, `Products`, `About`), and a quick-action `<PrimaryLink>` button to the contact page.
+  * **Role**: Fixed/sticky navigation bar (`"use client"`) with backdrop blur (`backdrop-blur-md`), brand branding, route-aware active link highlighting in `primary` (for `Home`, `Products`, and `About`), and a quick-action `<PrimaryLink>` button to the contact page.
 
 * **[`components/Footer.tsx`]**
   * **Role**: Multi-column footer displaying company mission, copyright information, categorized links (`Solutions`, `Company`, `Resources`), and legal navigation (`Privacy Policy`, `Terms of Service`).
@@ -94,6 +94,22 @@ Modular, single-responsibility components composed within `app/page.tsx`.
 
 ---
 
+#### 📁 `components/products/` (Products Page Components)
+
+* **[`components/products/ProductsHero.tsx`]**
+  * **Role**: Industrial header section featuring the page title, category overview, and concise introduction.
+
+* **[`components/products/ProductsCatalog.tsx`]**
+  * **Role**: Client-side interactive catalog (`"use client"`) managing active category filtering, the responsive products grid layout, and technical detail modal presentation.
+
+* **[`components/products/ProductCard.tsx`]**
+  * **Role**: Product card equipped with category badge, generic product title and description, overview bullet points, and an interactive trigger button.
+
+* **[`components/products/ProductDetailModal.tsx`]**
+  * **Role**: Accessible dialog (`"use client"`) with backdrop blur, Framer Motion animations, comprehensive specifications display, and direct inquiry link.
+
+---
+
 #### 📁 `components/contact/` (Contact Page Components)
 
 * **[`components/contact/ContactForm.tsx`]**
@@ -121,6 +137,9 @@ Modular, single-responsibility components composed within `app/page.tsx`.
 * **[`components/ui/Button.tsx`]**
   * **Role**: Accessible interactive button powered by Framer Motion (`whileHover={{ scale: 1.02 }}`, `whileTap={{ scale: 0.98 }}`). Supports multiple visual variants (`primary`, `secondary`, `outline`) and an integrated loading spinner state.
 
+* **[`components/ui/Badge.tsx`]**
+  * **Role**: Lightweight status and category badge primitive with emerald, cyan, zinc, and outline color styles.
+
 ---
 
 #### 📁 `components/animations/` (Motion & Interactions)
@@ -130,10 +149,20 @@ Modular, single-responsibility components composed within `app/page.tsx`.
 
 ---
 
+### 📁 `data/` Directory
+
+* **[`data/products.ts`]**
+  * **Role**: Typed mock product catalog with categorized hardware, software, and accessories entries.
+
+---
+
 ### 📁 `types/` Directory
 
 * **[`types/contact.ts`]**
   * **Role**: Strict TypeScript definitions for the contact domain: `ContactFormData`, `InquiryType`, `FormErrors`, and `FormSubmissionStatus`.
+
+* **[`types/product.ts`]**
+  * **Role**: Strict TypeScript definitions for the product domain: `ProductCategory` and `Product`.
 
 ---
 
