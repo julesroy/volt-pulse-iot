@@ -4,8 +4,9 @@ export default function Footer() {
   return (
     <footer className="w-full border-t border-zinc-800/80 bg-zinc-950 text-zinc-400 text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+        {/* row 1: main footer links grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-zinc-800/60">
-          {/* Brand Column */}
+          {/* column 1: brand summary and copyright */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
@@ -25,7 +26,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Links Column 1 */}
+          {/* column 2: solutions links */}
           <div className="space-y-3">
             <h4 className="text-xs font-semibold text-white tracking-wider uppercase font-mono">
               Solutions
@@ -54,7 +55,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Links Column 2 */}
+          {/* column 3: company links */}
           <div className="space-y-3">
             <h4 className="text-xs font-semibold text-white tracking-wider uppercase font-mono">
               Company
@@ -83,7 +84,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Links Column 3 */}
+          {/* column 4: resources links */}
           <div className="space-y-3">
             <h4 className="text-xs font-semibold text-white tracking-wider uppercase font-mono">
               Resources
@@ -113,7 +114,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* row 2: bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <p>Powering resilient, low-carbon industrial energy systems worldwide.</p>
           <div className="flex items-center gap-6">

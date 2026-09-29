@@ -26,8 +26,10 @@ const METRICS: MetricItem[] = [
 
 export default function MetricsSection() {
   return (
+    /* row 1: metrics grid */
     <section className="grid grid-cols-2 lg:grid-cols-4 gap-8 py-12 sm:py-16 border-y border-zinc-800/80">
       {METRICS.map((metric) => (
+        /* column: metric item */
         <div key={metric.label} className="flex flex-col">
           <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight">
             {metric.value}

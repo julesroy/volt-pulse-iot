@@ -24,14 +24,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Project Structure & File Guide
 
-Below is a detailed breakdown of the files in the `app/` and `components/` directories, describing their specific purpose and architectural role.
+Below is a detailed breakdown of the files in the `app/`, `components/`, and `types/` directories, describing their specific purpose and architectural role.
 
 ### 📁 `app/` Directory
 
 The Next.js App Router root directory managing routing, layouts, templates, and global styling.
 
 * **[`app/layout.tsx`]**
-  * **Role**: Configures global typography (`Geist` and `Geist_Mono` via `next/font/google`), sets metadata (SEO title, description), applies `globals.css`, and renders the persistent `<Header />` across all routes.
+  * **Role**: Configures global typography (`Geist` and `Geist_Mono` via `next/font/google`), sets metadata (SEO title, description), applies `globals.css`, and renders the persistent `<Header />` and `<Footer />` across all routes.
 
 * **[`app/template.tsx`]**
   * **Role**: Re-mounts on every route change to wrap the active page with `<PageTransition />`, enabling smooth Framer Motion animations across navigations.
@@ -43,7 +43,7 @@ The Next.js App Router root directory managing routing, layouts, templates, and 
   * **Role**: Default browser tab icon asset.
 
 * **[`app/page.tsx`]**
-  * **Role**: Orchestrates the modular home page layout with a dark industrial background and ambient radial glow, composing sections from `components/home/` and rendering the `<Footer />`.
+  * **Role**: Orchestrates the modular home page layout with a dark industrial background and ambient radial glow, composing sections from `components/home/`.
 
 * **[`app/about/page.tsx`]**
   * **Role**: Public-facing view detailing company vision, background, team, and commercial offerings.
@@ -52,7 +52,7 @@ The Next.js App Router root directory managing routing, layouts, templates, and 
   * **Role**: Showcase page for IoT hardware products (DIN-Rail smart meters, industrial LoRaWAN gateways) and SaaS energy analytics services.
 
 * **[`app/contact/page.tsx`]**
-  * **Role**: Facilitates customer inquiries, assessment requests, and sales consultations for industrial clients.
+  * **Role**: Server Component for the Contact route (`/contact`). Exports strict `Metadata` and OpenGraph tags, presenting a responsive two-column layout composing `<ContactInfo />` and `<ContactForm />`.
 
 ---
 
@@ -81,16 +81,26 @@ Modular, single-responsibility components composed within `app/page.tsx`.
   * **Role**: A 4-column responsive grid mapping through `VALUE_PROPOSITIONS` (Max Efficiency, Pure Sustainability, Total Resilience, Complete Control) with technical SVG icons and hover lift effects.
 
 * **[`components/home/CapabilitiesSection.tsx`]**
-  * **Role**: Asymmetrical grid layout highlighting core operational capabilities along with telemetry visualizer placeholders.
+  * **Role**: Asymmetrical grid layout highlighting core operational capabilities (Predictive Peak Staging, Load Shedding, Solar Inverter Sync, and Intelligent Fleet Charging) along with telemetry visualizer placeholders.
 
 * **[`components/home/MetricsSection.tsx`]**
-  * **Role**: Horizontal statistics bar highlighting industrial performance figures.
+  * **Role**: Horizontal statistics bar highlighting industrial performance figures (99.999% uptime, 40%+ cost reduction, 1.2 GW managed, 2.4 M tons carbon offset) using prominent emerald typography.
 
 * **[`components/home/PartnersSection.tsx`]**
-  * **Role**: Responsive flex row displaying trust partner brands.
+  * **Role**: Responsive flex row displaying trust partner brands (T-Power, Starlight Solar, EcoGrid Global, Metatronic, LithiumPro).
 
 * **[`components/home/CtaSection.tsx`]**
   * **Role**: Rounded container featuring an internal emerald ambient glow, persuasive microgrid assessment copy, and primary conversion links (`Connect with VoltPulse` and `Documentation`).
+
+---
+
+#### 📁 `components/contact/` (Contact Page Components)
+
+* **[`components/contact/ContactForm.tsx`]**
+  * **Role**: Client-side interactive form (`"use client"`). Features full field validation (RFC corporate email format, character count checks), field-level error messages, an animated loading state with a spinner, and a dismissible confirmation banner using Framer Motion.
+
+* **[`components/contact/ContactInfo.tsx`]**
+  * **Role**: Displays enterprise response SLA (< 24h response time, NDA commitment), active operations status indicator, direct engineering email and hotline, and physical office coordinates.
 
 ---
 
@@ -98,6 +108,18 @@ Modular, single-responsibility components composed within `app/page.tsx`.
 
 * **[`components/ui/PrimaryLink.tsx`]**
   * **Role**: Extends Next.js `LinkProps` with customizable sizing (`sm`, `md`, `lg`) and styles conforming to the emerald accent palette (`bg-primary`, dark text, soft glowing elevation, and hover transitions).
+
+* **[`components/ui/Input.tsx`]**
+  * **Role**: Accessible form input primitive with floating labels, required indicator, inline error feedback, and industrial dark theme focus borders.
+
+* **[`components/ui/Textarea.tsx`]**
+  * **Role**: Accessible multiline textarea primitive with validation error display and helper character guidance.
+
+* **[`components/ui/Select.tsx`]**
+  * **Role**: Accessible custom dropdown selector featuring a dark aesthetic and custom chevron indicator.
+
+* **[`components/ui/Button.tsx`]**
+  * **Role**: Accessible interactive button powered by Framer Motion (`whileHover={{ scale: 1.02 }}`, `whileTap={{ scale: 0.98 }}`). Supports multiple visual variants (`primary`, `secondary`, `outline`) and an integrated loading spinner state.
 
 ---
 
@@ -108,10 +130,18 @@ Modular, single-responsibility components composed within `app/page.tsx`.
 
 ---
 
+### 📁 `types/` Directory
+
+* **[`types/contact.ts`]**
+  * **Role**: Strict TypeScript definitions for the contact domain: `ContactFormData`, `InquiryType`, `FormErrors`, and `FormSubmissionStatus`.
+
+---
+
 ## Tech Stack
 
 - **Framework**: [Next.js](https://nextjs.org/) (App Router, Turbopack)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/) (Strict Mode)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Typography**: [Geist](https://vercel.com/font)

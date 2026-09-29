@@ -28,6 +28,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
+        {/* background ambient glow */}
+        <div
+          className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-primary/10 blur-[130px] rounded-full"
+          aria-hidden="true"
+        />
         <Footer />
       </body>
     </html>

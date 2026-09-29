@@ -82,7 +82,7 @@ const VALUE_PROPOSITIONS: ValuePropItem[] = [
 export default function ValuePropositionSection() {
   return (
     <section className="flex flex-col">
-      {/* Eyebrow and Section Header */}
+      {/* eyebrow and section header */}
       <div className="mb-8 sm:mb-10">
         <span className="text-xs font-mono font-semibold tracking-widest uppercase text-primary mb-2 block">
           Our Value Proposition
@@ -92,9 +92,10 @@ export default function ValuePropositionSection() {
         </h2>
       </div>
 
-      {/* 4 Cards Grid */}
+      {/* row 1: 4-card value proposition grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         {VALUE_PROPOSITIONS.map((item) => (
+          /* column: feature card */
           <div
             key={item.title}
             className="group rounded-xl border border-zinc-800/80 bg-zinc-900/30 hover:bg-zinc-900/50 hover:border-zinc-700/90 p-5 sm:p-6 transition-all duration-300"

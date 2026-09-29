@@ -4,22 +4,22 @@ import PrimaryLink from "@/components/ui/PrimaryLink";
 export default function HeroSection() {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center pt-4 sm:pt-8">
-      {/* Left Column: Heading & CTAs */}
+      {/* column 1: heading and ctas */}
       <div className="lg:col-span-7 flex flex-col items-start">
-        {/* H1 Heading */}
+        {/* h1 heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6 sm:mb-8">
           The Autonomous <br />
           <span className="text-primary">Energy Grid</span> Is Here
         </h1>
 
-        {/* Subtitle */}
+        {/* subtitle */}
         <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-xl mb-8 sm:mb-10">
           Integrating AI-driven generation, intelligent battery staging, and
           real-time load shedding into a single, cohesive software-defined
           energy architecture for industrial and commercial facilities.
         </p>
 
-        {/* CTAs */}
+        {/* ctas */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
           <PrimaryLink href="/" size="md">
             Deploy VoltPulse
@@ -36,10 +36,10 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Right Column: Hero Graphic Card (Empty image block) */}
+      {/* column 2: hero graphic card (empty image block) */}
       <div className="lg:col-span-5 w-full">
         <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 sm:p-5 backdrop-blur-md shadow-2xl relative">
-          {/* Header inside the card */}
+          {/* header inside the card */}
           <div className="flex items-center justify-between border-b border-zinc-800/70 pb-3 mb-4">
             <div className="flex flex-col">
               <span className="text-[10px] font-mono tracking-widest uppercase text-zinc-500">
@@ -55,13 +55,13 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Sub-status metadata bar */}
+          {/* sub-status metadata bar */}
           <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500 mb-3 px-1">
             <span>Line Shed Trigger: OFF</span>
             <span>Hz: 50.0</span>
           </div>
 
-          {/* Empty Image / Telemetry Block */}
+          {/* empty image / telemetry block */}
           <div className="w-full h-64 sm:h-72 lg:h-80 rounded-xl border border-dashed border-zinc-800/80 bg-zinc-950/60 relative overflow-hidden" />
         </div>
       </div>

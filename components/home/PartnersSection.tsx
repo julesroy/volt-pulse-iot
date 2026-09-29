@@ -10,6 +10,7 @@ const PARTNERS = [
 
 export default function PartnersSection() {
   return (
+    /* row 1: partners brand showcase */
     <section className="flex flex-col items-center text-center">
       <span className="text-[11px] font-mono tracking-widest uppercase text-zinc-500 mb-8 font-medium">
         Powering Next-Gen Industrial Infrastructure

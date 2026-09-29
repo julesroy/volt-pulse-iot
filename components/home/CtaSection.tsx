@@ -3,8 +3,8 @@ import PrimaryLink from "@/components/ui/PrimaryLink";
 
 export default function CtaSection() {
   return (
+    /* row 1: call to action card */
     <section className="relative rounded-3xl border border-zinc-800 bg-gradient-to-b from-zinc-900/60 to-zinc-950/80 p-8 sm:p-14 lg:p-16 text-center overflow-hidden shadow-2xl">
-      {/* Subtle Ambient Glow inside Card */}
       <div
         className="pointer-events-none absolute -bottom-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-primary/20 blur-[90px] rounded-full"
         aria-hidden="true"
