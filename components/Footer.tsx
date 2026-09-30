@@ -9,9 +9,6 @@ export default function Footer() {
           {/* column 1: brand summary and copyright */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
-                <div className="w-2.5 h-2.5 rounded-sm bg-primary" />
-              </div>
               <span className="text-lg font-bold italic tracking-tight">
                 <span className="text-white">Volt</span><span className="text-primary">Pulse</span>
               </span>

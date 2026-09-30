@@ -1,8 +1,11 @@
 # VoltPulse - IoT Energy Management Platform
 
 A high-performance B2B website built for **VoltPulse**, an energy management company providing IoT-based energy monitoring systems, microgrid analytics, and automated load control to industrial and commercial facilities.
+**NB**:  
+This is a concept project for demonstration purposes. Text on this website is AI generated as I'm not an expert in electrical engineering or energy management. 
 
 ---
+
 
 ## Getting Started
 
@@ -24,7 +27,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Project Structure & File Guide
 
-Below is a detailed breakdown of the files in the `app/`, `components/`, and `types/` directories, describing their specific purpose and architectural role.
+Below is a detailed breakdown of the files in the `app/`, `components/`, `data/` and `types/` directories, describing their specific purpose and architectural role.
 
 ### 📁 `app/` Directory
 
@@ -46,7 +49,7 @@ The Next.js App Router root directory managing routing, layouts, templates, and 
   * **Role**: Orchestrates the modular home page layout with a dark industrial background and ambient radial glow, composing sections from `components/home/`.
 
 * **[`app/about/page.tsx`]**
-  * **Role**: Public-facing view detailing company vision, background, team, and commercial offerings.
+  * **Role**: Server Component for the About route (`/about`). Exports strict `Metadata` and OpenGraph tags, presenting a modular layout composing `<AboutHero />`, `<ValuesSection />`, `<MilestonesTimeline />`, `<TeamSection />`, and `<AboutCtaSection />`.
 
 * **[`app/products/page.tsx`]**
   * **Role**: Showcase page for hardware products, software solutions, and accessories. Server Component exporting strict `Metadata` and OpenGraph tags, presenting a modular layout composing `<ProductsHero />` and `<ProductsCatalog />`.
@@ -63,7 +66,10 @@ Contains all reusable UI blocks, layout components, animation wrappers, and page
 #### Root Components
 
 * **[`components/Header.tsx`]**
-  * **Role**: Fixed/sticky navigation bar (`"use client"`) with backdrop blur (`backdrop-blur-md`), brand branding, route-aware active link highlighting in `primary` (for `Home`, `Products`, and `About`), and a quick-action `<PrimaryLink>` button to the contact page.
+  * **Role**: Fixed/sticky navigation bar (`"use client"`) with backdrop blur (`backdrop-blur-md`), responsive desktop grid and mobile flex layouts, route-aware active link highlighting in `primary` (for `Home`, `Products`, and `About`), desktop quick-action `<PrimaryLink>` button, and mobile hamburger toggle button.
+
+* **[`components/MobileMenu.tsx`]**
+  * **Role**: Client-side slide-down navigation drawer (`"use client"`) rendered via Framer Motion (`AnimatePresence`). Features full-width route navigation links, active route indicators, a full-width Contact CTA, Escape-key keyboard listener, and system telemetry status indicator.
 
 * **[`components/Footer.tsx`]**
   * **Role**: Multi-column footer displaying company mission, copyright information, categorized links (`Solutions`, `Company`, `Resources`), and legal navigation (`Privacy Policy`, `Terms of Service`).
@@ -110,6 +116,25 @@ Modular, single-responsibility components composed within `app/page.tsx`.
 
 ---
 
+#### 📁 `components/about/` (About Page Components)
+
+* **[`components/about/AboutHero.tsx`]**
+  * **Role**: Industrial header section presenting VoltPulse's mission and strategic vision with ambient glowing cards.
+
+* **[`components/about/ValuesSection.tsx`]**
+  * **Role**: 4-column responsive grid detailing core engineering and sustainability values with Lucide icons.
+
+* **[`components/about/MilestonesTimeline.tsx`]**
+  * **Role**: Interactive animated timeline (`"use client"`) using Framer Motion to visualize operational milestones from lab prototyping to 1.2+ GW telemetry scale.
+
+* **[`components/about/TeamSection.tsx`]**
+  * **Role**: Leadership and engineering team directory (`"use client"`) with department filter tabs, role descriptions, and technical expertise tags.
+
+* **[`components/about/AboutCtaSection.tsx`]**
+  * **Role**: High-contrast conversion banner inviting enterprise facility managers and grid operators to schedule an engineering pilot or explore products.
+
+---
+
 #### 📁 `components/contact/` (Contact Page Components)
 
 * **[`components/contact/ContactForm.tsx`]**
@@ -151,12 +176,18 @@ Modular, single-responsibility components composed within `app/page.tsx`.
 
 ### 📁 `data/` Directory
 
+* **[`data/about.ts`]**
+  * **Role**: Typed mock data for company mission, vision statements, values, operational timeline milestones, and team members.
+
 * **[`data/products.ts`]**
   * **Role**: Typed mock product catalog with categorized hardware, software, and accessories entries.
 
 ---
 
 ### 📁 `types/` Directory
+
+* **[`types/about.ts`]**
+  * **Role**: Strict TypeScript definitions for the about domain: `CompanyValue`, `TeamMember`, `CompanyMilestone`, and `Department`.
 
 * **[`types/contact.ts`]**
   * **Role**: Strict TypeScript definitions for the contact domain: `ContactFormData`, `InquiryType`, `FormErrors`, and `FormSubmissionStatus`.
@@ -174,3 +205,11 @@ Modular, single-responsibility components composed within `app/page.tsx`.
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Typography**: [Geist](https://vercel.com/font)
+
+---
+
+## Tools
+
+- **Figma**: To create the favicon
+- **Vercel**: For deploying the website
+- **Google Antigravity inline completion**: To assist for writing clean comments and write text in the website
