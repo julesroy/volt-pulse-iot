@@ -41,13 +41,13 @@ Below is a detailed breakdown of the files in the `app/`, `components/`, `data/`
 The Next.js App Router root directory managing routing, layouts, templates, and global styling.
 
 * **`app/layout.tsx`**
-  * **Role**: Configures global typography (`Geist` and `Geist_Mono` via `next/font/google`), sets metadata (SEO title, description), applies `globals.css`, and renders the persistent `<Header />` and `<Footer />` across all routes.
+  * **Role**: Configures global typography (`Geist` and `Geist_Mono` via `next/font/google`), sets metadata (SEO title, description), defines responsive mobile `viewport` parameters, clips the ambient background glow to prevent horizontal viewport overflow, applies `globals.css`, and renders the persistent `<Header />` and `<Footer />` across all routes.
 
 * **`app/template.tsx`**
   * **Role**: Re-mounts on every route change to wrap the active page with `<PageTransition />`, enabling smooth Framer Motion animations across navigations.
 
 * **`app/globals.css`**
-  * **Role**: Declares base CSS custom properties (`--primary`, `--background`, `--foreground`, `--muted`), theme color tokens, dark mode overrides, and base typography rules.
+  * **Role**: Declares base CSS custom properties (`--primary`, `--background`, `--foreground`, `--muted`), theme color tokens, dark mode overrides, base typography rules, and viewport overflow clipping (`overflow-x: clip` / `overflow-x: hidden`) to prevent horizontal scroll on mobile devices.
 
 * **`app/favicon.ico`**
   * **Role**: Default browser tab icon asset.
@@ -84,7 +84,7 @@ The Next.js App Router root directory managing routing, layouts, templates, and 
 #### `components/home/` (Home Page Sections)
 
 * **`components/home/HeroSection.tsx`**
-  * **Role**: Displays the primary real-time industrial energy management headline, descriptive copy, dual CTA links (`Deploy VoltPulse` and `Review Live Specs`), and a simulated real-time telemetry card with live status indicators and graphic placeholder frame.
+  * **Role**: Displays the primary real-time industrial energy management headline, descriptive copy, dual CTA links (`Deploy VoltPulse` and `Review Live Specs`), and a simulated real-time telemetry card with live status indicators and telemetry dashboard image preview.
 
 * **`components/home/ValuePropositionSection.tsx`**
   * **Role**: A 4-column responsive grid mapping through `VALUE_PROPOSITIONS` (Peak Cost Reduction, Solar & Storage Sync, Continuous Uptime, Sub-Meter Visibility) with `lucide-react` icons, Framer Motion scroll reveals (`whileInView`), and card hover lift effects.
