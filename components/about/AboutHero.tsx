@@ -1,5 +1,4 @@
 import React from "react";
-import Badge from "@/components/ui/Badge";
 import { COMPANY_MISSION } from "@/data/about";
 import { Compass, Target } from "lucide-react";
 

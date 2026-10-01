@@ -16,7 +16,7 @@ const METRICS: MetricItem[] = [
   },
   {
     value: "1.2 GW",
-    label: "Combined grid energy managed",
+    label: "Combined facility load monitored",
   },
   {
     value: "2.4 M",

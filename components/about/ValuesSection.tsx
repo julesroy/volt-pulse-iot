@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import { COMPANY_VALUES } from "@/data/about";
 import Badge from "@/components/ui/Badge";
 import { Activity, Leaf, ShieldCheck, Cpu, LucideIcon } from "lucide-react";
@@ -34,9 +37,14 @@ export default function ValuesSection() {
           const Icon = ICON_MAP[val.iconName] || Cpu;
           return (
             /* column item for each value */
-            <div
+            <motion.div
               key={val.id}
-              className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-6 flex flex-col justify-between hover:border-zinc-700/80 hover:bg-zinc-900/50 transition-all duration-200"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3, delay: idx * 0.08 }}
+              className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-6 flex flex-col justify-between hover:border-primary/40 hover:bg-zinc-900/50 transition-colors duration-200"
             >
               <div>
                 <div className="flex items-center justify-between mb-5">
@@ -62,7 +70,7 @@ export default function ValuesSection() {
                   </Badge>
                 </div>
               )}
-            </div>
+            </motion.div>
           );
         })}
       </div>

@@ -14,9 +14,9 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-xs sm:text-sm text-zinc-400 max-w-sm leading-relaxed">
-              Software-defined infrastructure built for localized energy
-              independence, microgrid staging, and automated commercial load
-              shedding.
+              IoT smart metering and intelligent energy analytics designed to
+              reduce costs, safeguard uptime, and optimize power for industrial
+              facilities.
             </p>
             <p className="text-xs text-zinc-500 pt-2">
               &copy; {new Date().getFullYear()} VoltPulse Systems, Inc. All rights reserved.

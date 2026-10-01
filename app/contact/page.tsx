@@ -12,6 +12,7 @@ export const metadata: Metadata = {
       "Connect with our IoT energy systems engineers. Schedule an on-site facility power audit, request hardware telemetry specifications, or discuss enterprise microgrid pilots.",
     url: "",
     siteName: "VoltPulse",
+    images: ["/dashboard.webp"],
     type: "website",
   },
 };

@@ -33,21 +33,24 @@ export default function TeamSection() {
         </div>
 
         {/* row 1 column 2: department filter buttons */}
-        <div className="flex items-center gap-1.5 p-1 rounded-lg bg-zinc-900 border border-zinc-800 self-start sm:self-auto">
-          {(["All", "Leadership", "Engineering", "Research"] as const).map((dept) => (
-            <button
-              key={dept}
-              onClick={() => setSelectedDept(dept)}
-              type="button"
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
-                selectedDept === dept
-                  ? "bg-zinc-800 text-white shadow-sm"
-                  : "text-zinc-400 hover:text-white"
-              }`}
-            >
-              {dept}
-            </button>
-          ))}
+        <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
+          {(["All", "Leadership", "Engineering", "Research"] as const).map((dept) => {
+            const isActive = selectedDept === dept;
+            return (
+              <button
+                key={dept}
+                type="button"
+                onClick={() => setSelectedDept(dept)}
+                className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                  isActive
+                    ? "bg-primary text-zinc-950 shadow-[0_0_16px_rgba(0,207,111,0.2)]"
+                    : "bg-zinc-900/60 text-zinc-400 hover:text-white hover:bg-zinc-800/80 border border-zinc-800"
+                }`}
+              >
+                {dept}
+              </button>
+            );
+          })}
         </div>
       </div>
 

@@ -1,4 +1,9 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Zap, Sun } from "lucide-react";
 
 export default function CapabilitiesSection() {
   return (
@@ -6,117 +11,138 @@ export default function CapabilitiesSection() {
       {/* eyebrow and section header */}
       <div className="mb-8 sm:mb-10">
         <span className="text-xs font-mono font-semibold tracking-widest uppercase text-primary mb-2 block">
-          Grid Management Capabilities
+          Core Operational Capabilities
         </span>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
-          AI-Augmented Peak Optimization
+          Intelligent Energy Control & Automation
         </h2>
       </div>
 
       <div className="flex flex-col gap-6">
         {/* row 1: wide card (left) + small card (right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* column 1: wide card with 2-part content (text + empty image block) */}
-          <div className="lg:col-span-8 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 p-6 sm:p-8 flex flex-col justify-between">
+          {/* column 1: wide card with 2-part content (text + image block) */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3 }}
+            className="lg:col-span-8 rounded-2xl border border-zinc-800/80 hover:border-primary/40 bg-zinc-900/30 p-6 sm:p-8 flex flex-col justify-between transition-colors duration-200"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               {/* column 1 (nested): text */}
               <div className="flex flex-col">
                 <span className="text-xs font-mono font-medium tracking-wider uppercase text-zinc-500 mb-2">
-                  Predictive Peak Staging
+                  Predictive Peak Management
                 </span>
                 <h3 className="text-xl font-bold text-white mb-3">
                   Avoid grid overload charges before they strike
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                  Our internal predictive modeling anticipates dynamic tariff
-                  surge spikes and shifts secondary heavy operations to
-                  localized battery storage seamlessly.
+                  Predictive AI forecasts peak utility tariff windows and shifts
+                  high-draw equipment to on-site battery reserves before costly
+                  surge penalties trigger.
                 </p>
               </div>
 
-              {/* column 2 (nested): empty image block */}
-              <div className="w-full h-48 sm:h-56 rounded-xl border border-dashed border-zinc-800/80 bg-zinc-950/60" />
+              {/* column 2 (nested): image block */}
+              <Image
+                className="w-full h-48 sm:h-56 rounded-xl object-cover"
+                src="/peak.webp"
+                alt="Predictive Peak Management"
+                width={600}
+                height={350}
+              />
             </div>
-          </div>
+          </motion.div>
 
           {/* column 2: small card */}
-          <div className="lg:col-span-4 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 p-6 sm:p-8 flex flex-col justify-between">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className="lg:col-span-4 rounded-2xl border border-zinc-800/80 hover:border-primary/40 bg-zinc-900/30 p-6 sm:p-8 flex flex-col justify-between transition-colors duration-200"
+          >
             <div>
               <div className="w-10 h-10 rounded-lg border border-primary/30 bg-primary/10 flex items-center justify-center text-primary mb-5">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                </svg>
+                <Zap className="w-5 h-5" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-bold text-white mb-3">
-                Load Shedding
+                Automated Load Shedding
               </h3>
               <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                Prioritize mission-critical equipment and safely cut ancillary
-                industrial loads automatically within milliseconds of a grid
-                disruption.
+                Safely pause non-critical loads like compressors and HVAC units
+                within milliseconds during peak grid stress to safeguard core
+                production.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* row 2: small card (left) + wide card (right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* column 1: small card */}
-          <div className="lg:col-span-4 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 p-6 sm:p-8 flex flex-col justify-between">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3 }}
+            className="lg:col-span-4 rounded-2xl border border-zinc-800/80 hover:border-primary/40 bg-zinc-900/30 p-6 sm:p-8 flex flex-col justify-between transition-colors duration-200"
+          >
             <div>
               <div className="w-10 h-10 rounded-lg border border-primary/30 bg-primary/10 flex items-center justify-center text-primary mb-5">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="4" />
-                  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-                </svg>
+                <Sun className="w-5 h-5" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-bold text-white mb-3">
                 Solar Inverter Sync
               </h3>
               <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                Directly synchronize multiple commercial solar inverters,
-                dynamically adjusting generation parameters to maximize on-site
-                consumption and tariff returns.
+                Synchronize commercial solar inverters and battery banks in
+                real time to maximize on-site consumption and export surplus
+                back to the grid.
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          {/* column 2: wide card with 2-part content (empty image block + text) */}
-          <div className="lg:col-span-8 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 p-6 sm:p-8 flex flex-col justify-between">
+          {/* column 2: wide card with 2-part content (image block + text) */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className="lg:col-span-8 rounded-2xl border border-zinc-800/80 hover:border-primary/40 bg-zinc-900/30 p-6 sm:p-8 flex flex-col justify-between transition-colors duration-200"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-              {/* column 1 (nested): empty image block */}
-              <div className="w-full h-48 sm:h-56 rounded-xl border border-dashed border-zinc-800/80 bg-zinc-950/60 order-2 md:order-1" />
+              {/* column 1 (nested): image block */}
+              <Image
+                className="w-full h-48 sm:h-56 rounded-xl object-cover"
+                src="/equipments.webp"
+                alt="Intelligent Fleet and Equipment Charging"
+                width={600}
+                height={350}
+              />
 
               {/* column 2 (nested): text */}
-              <div className="flex flex-col order-1 md:order-2">
+              <div className="flex flex-col">
                 <span className="text-xs font-mono font-medium tracking-wider uppercase text-zinc-500 mb-2">
                   Intelligent Fleet Charging
                 </span>
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Dynamically dispatch storage power to EV bays
+                  Intelligent Fleet & Equipment Charging
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                  Balance high-draw industrial vehicle fleets simultaneously.
-                  VoltPulse automatically orchestrates charging schedules
-                  based on tariff windows and operational shift times.
+                  Manage electric industrial fleets and forklift charging
+                  schedules automatically, drawing power during off-peak
+                  windows to minimize utility costs.
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

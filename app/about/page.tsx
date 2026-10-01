@@ -15,6 +15,7 @@ export const metadata: Metadata = {
       "Learn about VoltPulse's mission, engineering leadership, and operational milestones in industrial IoT energy monitoring, sub-second telemetry, and autonomous microgrids.",
     url: "",
     siteName: "VoltPulse",
+    images: ["/dashboard.webp"],
     type: "website",
   },
 };

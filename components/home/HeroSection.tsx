@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PrimaryLink from "@/components/ui/PrimaryLink";
 
 export default function HeroSection() {
@@ -8,15 +9,15 @@ export default function HeroSection() {
       <div className="lg:col-span-7 flex flex-col items-start">
         {/* h1 heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6 sm:mb-8">
-          The Autonomous <br />
-          <span className="text-primary">Energy Grid</span> Is Here
+          Real-Time Industrial <br />
+          <span className="text-primary">Energy Management</span>
         </h1>
 
         {/* subtitle */}
         <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-xl mb-8 sm:mb-10">
-          Integrating AI-driven generation, intelligent battery staging, and
-          real-time load shedding into a single, cohesive software-defined
-          energy architecture for industrial and commercial facilities.
+          Monitor power usage in real time, eliminate peak demand charges, and
+          automate on-site solar and battery storage with an intelligent IoT
+          platform built for industrial and commercial facilities.
         </p>
 
         {/* ctas */}
@@ -43,10 +44,10 @@ export default function HeroSection() {
           <div className="flex items-center justify-between border-b border-zinc-800/70 pb-3 mb-4">
             <div className="flex flex-col">
               <span className="text-[10px] font-mono tracking-widest uppercase text-zinc-500">
-                Grid Telemetry
+                Live Telemetry
               </span>
               <span className="text-xs font-semibold text-zinc-200">
-                Nodal Distribution Matrix
+                Sub-Circuit Power Distribution
               </span>
             </div>
             <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-[11px] font-mono text-primary">
@@ -55,14 +56,15 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* sub-status metadata bar */}
-          <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500 mb-3 px-1">
-            <span>Line Shed Trigger: OFF</span>
-            <span>Hz: 50.0</span>
-          </div>
-
-          {/* empty image / telemetry block */}
-          <div className="w-full h-64 sm:h-72 lg:h-80 rounded-xl border border-dashed border-zinc-800/80 bg-zinc-950/60 relative overflow-hidden" />
+          {/* telemetry dashboard preview */}
+          <Image
+            className="w-full h-64 sm:h-72 lg:h-80 rounded-xl object-cover relative overflow-hidden"
+            src="/dashboard.webp"
+            alt="VoltPulse Telemetry Dashboard"
+            width={800}
+            height={450}
+            priority
+          />
         </div>
       </div>
     </section>

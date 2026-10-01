@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       "Explore our complete range of industrial energy monitoring hardware, telemetry devices, and SaaS platform solutions.",
     url: "",
     siteName: "VoltPulse",
+    images: ["/dashboard.webp"],
     type: "website",
   },
 };

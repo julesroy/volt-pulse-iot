@@ -1,9 +1,25 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/home/HeroSection";
 import ValuePropositionSection from "@/components/home/ValuePropositionSection";
 import CapabilitiesSection from "@/components/home/CapabilitiesSection";
 import MetricsSection from "@/components/home/MetricsSection";
 import PartnersSection from "@/components/home/PartnersSection";
 import CtaSection from "@/components/home/CtaSection";
+
+export const metadata: Metadata = {
+  title: "Home | VoltPulse",
+  description:
+    "Real-time industrial IoT energy management, sub-second telemetry, and autonomous microgrid control for enterprise facilities.",
+  openGraph: {
+    title: "Home | VoltPulse",
+    description:
+      "Real-time industrial IoT energy management, sub-second telemetry, and autonomous microgrid control for enterprise facilities.",
+    url: "",
+    siteName: "VoltPulse",
+    images: ["/dashboard.webp"],
+    type: "website",
+  },
+};
 
 export default function Home() {
   return (
