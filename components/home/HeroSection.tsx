@@ -4,7 +4,7 @@ import PrimaryLink from "@/components/ui/PrimaryLink";
 
 export default function HeroSection() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center pt-4 sm:pt-8">
+    <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center lg:min-h-[calc(100vh-10rem)] py-6 sm:py-8 lg:py-0">
       {/* column 1: heading and ctas */}
       <div className="lg:col-span-7 flex flex-col items-start">
         {/* h1 heading */}
