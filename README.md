@@ -205,7 +205,7 @@ The Next.js App Router root directory managing routing, layouts, templates, and 
 
 ## Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/) (App Router, Turbopack)
+- **Framework**: [Next.js v16](https://nextjs.org/) (App Router, Turbopack), please note that you need Node.js v20.9 or above on your machine to be able to install it
 - **Language**: [TypeScript](https://www.typescriptlang.org/) (Strict Mode)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 - **Icons**: [Lucide React](https://lucide.dev/)
